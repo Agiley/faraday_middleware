@@ -3,6 +3,7 @@ require File.expand_path('../lib/faraday_middleware/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.add_dependency 'faraday', ['>= 0.7.4', '< 0.9']
   gem.add_development_dependency 'multi_xml', '~> 0.2'
+  gem.add_development_dependency 'nokogiri', '~> 1.5.0'
   gem.add_development_dependency 'rake', '~> 0.9'
   gem.add_development_dependency 'hashie', '~> 1.2'
   gem.add_development_dependency 'rash', '~> 0.3'
@@ -14,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.email = ['sferik@gmail.com', 'wynn.netherland@gmail.com']
   gem.files = `git ls-files`.split("\n")
   gem.homepage = 'https://github.com/pengwynn/faraday_middleware'
-  gem.name = 'faraday_middleware'
+  gem.name = 'agiley-faraday_middleware'
   gem.require_paths = ['lib']
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6')
   gem.summary = gem.description
