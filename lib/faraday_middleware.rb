@@ -10,6 +10,7 @@ module FaradayMiddleware
   autoload :ParseXml,           'faraday_middleware/response/parse_xml'
   autoload :ParseNokogiriXml,   'faraday_middleware/response/parse_nokogiri_xml'
   autoload :ParseNokogiriHtml,  'faraday_middleware/response/parse_nokogiri_html'
+  autoload :ForceUtf,           'faraday_middleware/response/force_utf'
   autoload :ParseMarshal,       'faraday_middleware/response/parse_marshal'
   autoload :ParseYaml,          'faraday_middleware/response/parse_yaml'
   autoload :Caching,            'faraday_middleware/response/caching'
@@ -31,6 +32,7 @@ module FaradayMiddleware
       :xml              =>  lambda { ParseXml },
       :nokogiri_xml     =>  lambda { ParseNokogiriXml },
       :nokogiri_html    =>  lambda { ParseNokogiriHtml },
+      :force_utf        =>  lambda { ForceUtf },
       :marshal          =>  lambda { ParseMarshal },
       :yaml             =>  lambda { ParseYaml },
       :caching          =>  lambda { Caching },

@@ -12,6 +12,7 @@ Faraday::Response.class_eval do
   autoload :ParseXml,             'faraday_middleware/response/parse_xml'
   autoload :ParseNokogiriXml,     'faraday_middleware/response/parse_nokogiri_xml'
   autoload :ParseNokogiriHtml,    'faraday_middleware/response/parse_nokogiri_html'
+  autoload :ForceUtf,             'faraday_middleware/response/force_utf'
   autoload :ParseMarshal,         'faraday_middleware/response/parse_marshal'
   autoload :ParseYaml,            'faraday_middleware/response/parse_yaml'
 end
