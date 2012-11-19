@@ -1,6 +1,7 @@
 # Mac OS X
 .DS_Store
 
+# RVM
 .rvmrc
 
 # TextMate
@@ -21,13 +22,12 @@ rdoc
 doc
 log
 .yardoc
+tmp
 
 # Bundler
-*.gem
 .bundle
 Gemfile.lock
 pkg
-*.gem
 
 # Rubinius
 *.rbc

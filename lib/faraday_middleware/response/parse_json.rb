@@ -3,11 +3,13 @@ require 'faraday_middleware/response_middleware'
 module FaradayMiddleware
   # Public: Parse response bodies as JSON.
   class ParseJson < ResponseMiddleware
-    dependency 'json'
+    dependency do
+      require 'json' unless defined?(::JSON)
+    end
 
-    define_parser { |body|
-      JSON.parse body unless body.empty?
-    }
+    define_parser do |body|
+      ::JSON.parse body unless body.strip.empty?
+    end
 
     # Public: Override the content-type of the response with "application/json"
     # if the response body looks like it might be JSON, i.e. starts with an
@@ -26,9 +28,19 @@ module FaradayMiddleware
       end
 
       BRACKETS = %w- [ { -
+      WHITESPACE = [ " ", "\n", "\r", "\t" ]
 
       def parse_response?(env)
-        super and BRACKETS.include? env[:body][0,1]
+        super and BRACKETS.include? first_char(env[:body])
+      end
+
+      def first_char(body)
+        idx = -1
+        begin
+          char = body[idx += 1]
+          char = char.chr if char
+        end while char and WHITESPACE.include? char
+        char
       end
     end
   end
