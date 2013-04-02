@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob("spec/**/*")
   spec.homepage = 'https://github.com/lostisland/faraday_middleware'
   spec.licenses = ['MIT']
-  spec.name = 'faraday_middleware'
+  spec.name = 'agiley-faraday_middleware'
   spec.require_paths = ['lib']
   spec.required_rubygems_version = '>= 1.3.6'
   spec.summary = spec.description
